@@ -1,18 +1,14 @@
-# SPICED Week09: Bayer04 jersey recognition on live footage using a 'Convolutional_Neural_Networks' (Keras)
+# SPICED Week08: Predicting the amount of customers and their movement within a supermarket using a 'Monte-Carlo-Markov-Chain' and 'Object Orientated Programming'
 
 ## Project Summary
 
-Have you ever wondered which year the Bayer04 vintage jersey in your wardrobe is from? Maybe I can help.
+In this project I predicted the number of customers and their movement within the DOODL Supermarket. The supermarket has four aisles (fruit, spices, dairy, drinks) and one checkout. To do the prediction, I calculated a 'Transition Probability Matrix' based on historical data of customer movements within the supermarket using a 'Monte Carlo Markov Chain'.
 
-As part of this project, I took between 150 and 200 photos of five different Bayer04 photos and used them to train a 'Convolutional_Neural_Networks' (CNN) using the library 'Keras'. As you can see on the following demonstration video, the programme was subsequently able to classify all six jerseys without errors.
-
-In addition, I trained the pretrained CNN VGG-16 on the two most similar jerseys to test its performance. The user can choose in the script between using the independently trained model or VGG-16.
-
-IMPORTANT: The two models and the photos of the six jerseys in the folder './1_data/' were not uploaded to GitHub because they were too large. So this is only a skeleton that you can use to train and apply your own model.
+The customer movements are calculated every minute, graphically animated and stored in the file ./data/customer.csv.
 
 ## Demonstration Video
 
-https://user-images.githubusercontent.com/61935581/209471946-48e37de4-191b-490c-98cf-f49383481eaa.mp4
+https://user-images.githubusercontent.com/61935581/209478840-efb8b7ef-0592-4395-ac88-26dc0c6492e8.mp4
 
 ## Installation
 
@@ -31,23 +27,13 @@ pip install -r requirements.txt
 
 ## Usage
 
-The project contains three major components:
+The project has several components:
 
-### 1. Take pictures of your objects
-
-To take pictures of the objects that the CNN should later distinguish, please use the ['imageclassifier' repo](https://github.com/bonartm/imageclassifier) by user 'bonartm', which is already in the order './take_pictures/'. The repo has its own README.md which explains exactly how to use it.
-
-As mentioned above, I took between 150 and 200 photos of the five different jerseys and the blank wall. I rotated the jerseys to get shots from all perspectives.
-
-### 2. Train the CNN model on the pictures
-
-With the jupyter notebook '2_Image_Recognition.ipynb' you can train the CNN model on your pictures. At the end of the notebook you will find a confusion matrix that gives you an impression of how well the model is performing on the test data.
-
-If you also want to train the pretrained VGG-16 model on your photos, you can use the jupyter notebook '3_Transfer_Pretrained_Model.ipynb' to do so.
-
-### 3. Use the model on live footage
-
-Use the script 'image_recognition.py' to perform image recognition on live footage. As it stands, the script asks which model to use for categorisation - the fully self-trained CNN model (option 1) or VGG-16 (option 2).
+- The jupyter notebook '1_EDA.ipynb' merges the historical data and applies extensive 'data preprocessing'.
+- '2_Graphics.ipynb' includes a few graphical analyses of the merged and preprocessed data set.
+- '3_probability_matrix.ipynb' contains the central 'transition probability matrix' on the basis of which the movement of customers is estimated.
+- 'supermarket_class.py' and 'customer_class.py' contains the classes for the supermarket and the customers according to OOP.
+- The simulation can be started via 'main.py'. The graphical representation starts automatically. In addition, the customers and their movements are stored in the file './data/customers.csv'.
 
 ## Contributing
 
