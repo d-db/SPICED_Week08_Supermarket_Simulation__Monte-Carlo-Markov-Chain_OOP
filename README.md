@@ -10,6 +10,10 @@ The customer movements are calculated every minute, graphically animated and sto
 
 https://user-images.githubusercontent.com/61935581/209478840-efb8b7ef-0592-4395-ac88-26dc0c6492e8.mp4
 
+Graphic representation of the supermarket
+
+![Bildschirmfoto 2022-12-25 um 19 53 35](https://user-images.githubusercontent.com/61935581/209479227-0de17873-4045-46b7-beec-4cd39be95cb7.png)
+
 ## Installation
 
 Clone the repository and create a new virtual environment
